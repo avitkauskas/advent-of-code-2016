@@ -7,15 +7,15 @@
        (map str/trim)
        (map #(map parse-long (str/split % #"\s+")))))
 
-(defn- triangle [triad]
+(defn- triangle? [triad]
   (let [max-val (apply max triad)
         other (let [[a b] (split-with (partial not= max-val) triad)]
                 (concat a (rest b)))]
-    (when (< max-val (apply + other)) true)))
+    (< max-val (apply + other))))
 
 (defn -main []
   (->> (get-data "data/input03.txt")
-       (keep triangle)
+       (filter triangle?)
        (count)))
 
 (comment
