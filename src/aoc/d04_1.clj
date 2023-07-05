@@ -31,7 +31,7 @@
        (map parse-room)
        (filter real?)
        (map second)
-       (apply +)))
+       (reduce +)))
 
 (comment
   (-main))
