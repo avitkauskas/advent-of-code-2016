@@ -2,4 +2,6 @@
 .cpcache/
 .lsp/
 data/
+.DS_Store
+.nrepl-port
 *.swp
