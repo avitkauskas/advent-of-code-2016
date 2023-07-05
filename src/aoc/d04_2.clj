@@ -25,11 +25,7 @@
 
 (defn- rotate [n ch]
   (if (= \- ch) " "
-      (let [n (rem n 26)
-            char-idx (- (int ch) 97)
-            new-idx (rem (+ char-idx n) 26)
-            new-ch (char (+ 97 new-idx))]
-        new-ch)))
+      (-> ch int (- 97) (+ n) (rem 26) (+ 97) char)))
 
 (defn- decrypt-name [room-name sector]
   (->> room-name 
