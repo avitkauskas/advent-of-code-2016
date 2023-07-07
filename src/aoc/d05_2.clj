@@ -11,7 +11,7 @@
              (< pos 8)
              (= \_ (pswd pos)))
       (let [new-pswd (assoc pswd pos (nth md5-hash 6))]
-        (println (str (apply str new-pswd) "\r"))
+        (println (apply str new-pswd))
         (if (not-any? #{\_} new-pswd)
           (reduced new-pswd)
           new-pswd))
