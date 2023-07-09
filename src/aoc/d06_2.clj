@@ -11,7 +11,7 @@
   (->> (get-columns)
        (map frequencies)
        (map #(sort-by val %))
-       (map #((comp first first) %))
+       (map ffirst)
        (apply str)))
 
 (comment
