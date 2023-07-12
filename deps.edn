@@ -1,3 +1,4 @@
 {:paths ["src"]
  :deps {org.clojure/clojure {:mvn/version "1.11.1"}
-        org.clj-commons/digest {:mvn/version "1.4.100"}}}
+        org.clj-commons/digest {:mvn/version "1.4.100"}
+        net.mikera/core.matrix {:mvn/version "0.63.0"}}}
