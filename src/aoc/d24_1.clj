@@ -66,7 +66,10 @@
 
 (def distances (make-distances (cons start targets)))
 
-(def target-points (mapv char (range (int \1) (+ (int \1) (count targets)))))
+(def target-points 
+  (let [from (int \1)
+        to (+ from (count targets))]
+    (mapv char (range from to))))
 
 (def all-paths (combo/permutations target-points))
 
